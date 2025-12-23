@@ -1,24 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Portofolio Indah Wahyuni</title>
 
-        const li = document.createElement("li");
-        li.innerHTML = `
-            ${input.value}
-            <button onclick="this.parentElement.remove()">✔</button>
-        `;
+    <style>
+        :root {
+            --bg: #fff1f5;
+            --card: #ffffff;
+            --text: #1f2933;
+            --primary: #ec4899;
+            --nav: #fbcfe8;
+        }
 
-        list.appendChild(li);
-        input.value = "";
+        body.dark {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --primary: #f472b6;
+            --nav: #1e293b;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: 0.3s;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--nav);
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: bold;
+        }
+
+        nav button {
+            background-color: var(--primary);
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: var(--card);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        .send {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .chat-box {
+            margin-top: 10px;
+            background-color: var(--bg);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portofolio Saya</h1>
+    <p>Mahasiswa | Pemrograman Web</p>
+</header>
+
+<nav>
+    <a href="#profil">Profil</a>
+    <a href="#hobi">Hobi</a>
+    <a href="#skill">Keahlian</a>
+    <a href="#pesan">Pesan</a>
+    <button onclick="gantiTema()">Ganti Tema</button>
+</nav>
+
+<div class="container">
+
+    <div class="card" id="profil">
+        <h2>Profil</h2>
+        <p>
+            Nama saya <b>Indah Wahyuni</b>.  
+            Saya adalah mahasiswa yang sedang belajar pemrograman web
+            dan desain sederhana.
+        </p>
+    </div>
+
+    <div class="card" id="hobi">
+        <h2>Hobi</h2>
+        <ul>
+            <li>Bermain game</li>
+            <li>Desain grafis</li>
+            <li>Mendengarkan musik</li>
+            <li>Belajar hal baru</li>
+        </ul>
+    </div>
+
+    <div class="card" id="skill">
+        <h2>Keahlian</h2>
+        <ul>
+            <li>HTML & CSS Dasar</li>
+            <li>Canva / Photoshop</li>
+            <li>Microsoft Office</li>
+        </ul>
+    </div>
+
+    <div class="card" id="pesan">
+        <h2>Kirim Pesan</h2>
+        <input type="text" id="nama" placeholder="Nama kamu">
+        <textarea id="pesanText" rows="4" placeholder="Tulis pesan..."></textarea>
+        <button class="send" onclick="kirimPesan()">Kirim</button>
+
+        <div class="chat-box" id="hasil">
+            <i>Pesan akan tampil di sini</i>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 | Portofolio Indah Wahyuni
+</footer>
+
+<script>
+    function gantiTema() {
+        document.body.classList.toggle("dark");
     }
 
-    const quotes = [
-        "Belajar memang melelahkan, tapi menyesal karena malas jauh lebih sakit.",
-        "Proses kecil hari ini menentukan masa depanmu.",
-        "Ngoding hari ini, panik besok kalau nggak.",
-        "Kesalahan adalah bagian dari belajar."
-    ];
+    function kirimPesan() {
+        let nama = document.getElementById("nama").value;
+        let pesan = document.getElementById("pesanText").value;
 
-    function changeQuote() {
-        const randomIndex = Math.floor(Math.random() * quotes.length);
-        document.getElementById("quoteText").innerText = quotes[randomIndex];
+        if (nama === "" || pesan === "") {
+            alert("Nama dan pesan wajib diisi!");
+            return;
+        }
+
+        document.getElementById("hasil").innerHTML =
+            "<b>" + nama + "</b><br>" + pesan;
+
+        document.getElementById("nama").value = "";
+        document.getElementById("pesanText").value = "";
     }
 </script>
 
