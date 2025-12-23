@@ -2,105 +2,96 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Website Game</title>
+    <title>Portofolio Indah Wahyuni</title>
+
     <style>
+        :root {
+            --bg: #fff1f5;
+            --card: #ffffff;
+            --text: #1f2933;
+            --primary: #ec4899;
+            --nav: #fbcfe8;
+        }
+
+        body.dark {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --primary: #f472b6;
+            --nav: #1e293b;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #0f172a;
-            color: white;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: 0.3s;
         }
 
         header {
-            background: linear-gradient(90deg, #7c3aed, #2563eb);
-            padding: 30px;
+            background-color: var(--primary);
+            color: white;
+            padding: 25px;
             text-align: center;
         }
 
         nav {
-            background-color: #020617;
+            background-color: var(--nav);
             padding: 12px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: #a5b4fc;
-            margin: 0 15px;
             text-decoration: none;
+            color: var(--text);
             font-weight: bold;
         }
 
-        nav a:hover {
+        nav button {
+            background-color: var(--primary);
+            border: none;
             color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
         }
 
         .container {
+            max-width: 900px;
+            margin: auto;
             padding: 20px;
         }
 
         .card {
-            background-color: #020617;
+            background-color: var(--card);
             padding: 20px;
             margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(124,58,237,0.4);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
-        footer {
-            background-color: #020617;
-            text-align: center;
-            padding: 15px;
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
             font-size: 14px;
-            color: #94a3b8;
         }
-    </style>
-</head>
-<body>
 
-<header>
-    <h1>🎮 Dunia Game</h1>
-    <p>Website Game Sederhana untuk Tugas</p>
-</header>
+        .send {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">Game Favorit</a>
-    <a href="#">Tentang</a>
-</nav>
-
-<div class="container">
-    <div class="card">
-        <h2>Apa Itu Game?</h2>
-        <p>
-            Game adalah permainan digital yang dimainkan untuk hiburan.
-            Selain menghibur, game juga dapat melatih konsentrasi,
-            strategi, dan kerja sama tim.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>Game Favorit Saya</h2>
-        <ul>
-            <li>Mobile Legends</li>
-            <li>PUBG Mobile</li>
-            <li>Free Fire</li>
-            <li>Minecraft</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>Manfaat Bermain Game</h2>
-        <p>
-            Bermain game dapat menghilangkan stres, melatih kecepatan berpikir,
-            serta meningkatkan kemampuan memecahkan masalah jika dimainkan
-            dengan bijak.
-        </p>
-    </div>
-</div>
-
-<footer>
-    <p>© 2025 Website Game | Indah Wahyuni</p>
-</footer>
-
-</body>
-</html>
+        .chat-box {
+            margin-top: 10px;
+            background-color: var(--bg);
+            padding: 10px;
+            border-
