@@ -1,97 +1,26 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Portofolio Indah Wahyuni</title>
 
-    <style>
-        :root {
-            --bg: #fff1f5;
-            --card: #ffffff;
-            --text: #1f2933;
-            --primary: #ec4899;
-            --nav: #fbcfe8;
-        }
+        const li = document.createElement("li");
+        li.innerHTML = `
+            ${input.value}
+            <button onclick="this.parentElement.remove()">✔</button>
+        `;
 
-        body.dark {
-            --bg: #0f172a;
-            --card: #1e293b;
-            --text: #f8fafc;
-            --primary: #f472b6;
-            --nav: #1e293b;
-        }
+        list.appendChild(li);
+        input.value = "";
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            transition: 0.3s;
-        }
+    const quotes = [
+        "Belajar memang melelahkan, tapi menyesal karena malas jauh lebih sakit.",
+        "Proses kecil hari ini menentukan masa depanmu.",
+        "Ngoding hari ini, panik besok kalau nggak.",
+        "Kesalahan adalah bagian dari belajar."
+    ];
 
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
+    function changeQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        document.getElementById("quoteText").innerText = quotes[randomIndex];
+    }
+</script>
 
-        nav {
-            background-color: var(--nav);
-            padding: 12px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: bold;
-        }
-
-        nav button {
-            background-color: var(--primary);
-            border: none;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .card {
-            background-color: var(--card);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-        }
-
-        input, textarea, button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 8px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-size: 14px;
-        }
-
-        .send {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .chat-box {
-            margin-top: 10px;
-            background-color: var(--bg);
-            padding: 10px;
-            border-
+</body>
+</html>
